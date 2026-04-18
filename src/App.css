@@ -17,6 +17,10 @@
   }
 }
 
+html {
+  width: 100vw;
+}
+
 .hero {
   position: relative;
 

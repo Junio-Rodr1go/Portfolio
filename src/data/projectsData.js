@@ -5,20 +5,20 @@ export const projectsData = [
     description: "Landing page moderna para academia com design responsivo e animações suaves.",
     tech: ["React", "CSS3", "Vite"],
     image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&h=400&fit=crop",
-    demoLink: "https://github.com/seu-usuario/projeto-academia",
+    demoLink: "https://academia-landing-page-six.vercel.app/",
     codeLink: "https://github.com/Junio-Rodr1go/Academia-landingPage",
     featured: true
   },
-  {
-    id: 2,
-    title: "E-commerce Fashion",
-    description: "Loja virtual completa com carrinho de compras e sistema de pagamento integrado.",
-    tech: ["React", "Node.js", "MongoDB"],
-    image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&h=400&fit=crop",
-    demoLink: "https://github.com/seu-usuario/ecommerce",
-    codeLink: "https://github.com/seu-usuario/ecommerce",
-    featured: true
-  },
+  // {
+  //   id: 2,
+  //   title: "E-commerce Fashion",
+  //   description: "Loja virtual completa com carrinho de compras e sistema de pagamento integrado.",
+  //   tech: ["React", "Node.js", "MongoDB"],
+  //   image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&h=400&fit=crop",
+  //   demoLink: "https://github.com/seu-usuario/ecommerce",
+  //   codeLink: "https://github.com/seu-usuario/ecommerce",
+  //   featured: true
+  // },
   {
     id: 3,
     title: "Cafeteria",
@@ -35,8 +35,8 @@ export const projectsData = [
     description: "Site completo com consumo de API, barra de pesquisa e maior manipulação de dados.",
     tech: ["HTML", "JavaScript", "API RESTful", "CSS3"],
     image: "https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?w=600&h=400&fit=crop",
-    demoLink: "https://github.com/seu-usuario/Pokedex",
-    codeLink: "https://github.com/seu-usuario/Pokedex",
+    demoLink: "https://junio-rodr1go.github.io/Pokedex/",
+    codeLink: "https://github.com/Junio-Rodr1go/Pokedex",
     featured: false
   },
   {
@@ -45,8 +45,8 @@ export const projectsData = [
     description: "Clone do famoso jogo Flappy bird.",
     tech: ["HTML", "JavaScript", "CSS3"],
     image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=600&h=400&fit=crop",
-    demoLink: "https://github.com/seu-usuario/netflix-clone",
-    codeLink: "https://github.com/seu-usuario/netflix-clone",
+    demoLink: "https://flappy-bird-ten-blond.vercel.app/",
+    codeLink: "https://github.com/Junio-Rodr1go/Flappy-Bird",
     featured: false
   },
   {
@@ -55,7 +55,7 @@ export const projectsData = [
     description: "Calculadora 100% funcional e de interface limpa, contendo light mode e Dark mode.",
     tech: ["HTML", "JavaScript", "CSS3"],
     image: "https://images.unsplash.com/photo-1587145820266-a5951ee6f620?w=600&h=400&fit=crop",
-    demoLink: "https://github.com/seu-usuario/weather-app",
+    demoLink: "https://calculadora-drab-phi.vercel.app/",
     codeLink: "https://github.com/Junio-Rodr1go/Calculator",
     featured: false
   }

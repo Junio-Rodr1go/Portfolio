@@ -1,3 +1,4 @@
+import image from"../imgs/Junio-Profile.jpeg" 
 import React from 'react';
 
 const Hero = () => {
@@ -14,7 +15,6 @@ const Hero = () => {
       display: 'flex',
       alignItems: 'center',
       position: 'relative',
-      overflow: 'hidden',
       paddingTop: '80px'
     },
     container: {
@@ -25,7 +25,6 @@ const Hero = () => {
     },
     content: {
       display: 'grid',
-      gridTemplateColumns: '1fr 1fr',
       gap: '48px',
       alignItems: 'center'
     },
@@ -76,6 +75,7 @@ const Hero = () => {
     },
     image: {
       width: '100%',
+      minWidth: '275px',
       maxWidth: '400px',
       borderRadius: '20px',
       background: 'linear-gradient(135deg, #6366f1, #8b5cf6)',
@@ -88,6 +88,7 @@ const Hero = () => {
     },
     img: {
       width: '100%',
+      minHeight: '275px',
       height: 'auto',
       display: 'block'
     },
@@ -106,7 +107,7 @@ const Hero = () => {
   return (
     <section id="inicio" style={styles.hero}>
       <div style={styles.container}>
-        <div style={styles.content}>
+          <div style={{...styles.content, gridTemplateColumns: window.innerWidth > 640 ? '1fr 1fr' : '1fr'}}>
           <div className="animate-slide-left">
             <span style={styles.badge}
             >👋 Olá, eu sou Júnio Rodrigo</span>
@@ -132,7 +133,7 @@ const Hero = () => {
               <div style={styles.image}>
                 <div style={styles.imageInner}>
                   <img 
-                    src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&h=400&fit=crop" 
+                    src={image}
                     alt="Developer"
                     style={styles.img}
                   />

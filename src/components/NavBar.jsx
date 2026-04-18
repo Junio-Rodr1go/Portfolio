@@ -24,7 +24,7 @@ const Navbar = () => {
     navbar: {
       position: 'fixed',
       top: 0,
-      width: '100%',
+      width: '100vw',
       zIndex: 1000,
       transition: 'all 0.3s ease',
       background: isScrolled ? 'rgba(15, 12, 41, 0.95)' : 'transparent',
@@ -94,7 +94,7 @@ const Navbar = () => {
           {"<Júnio />"}
         </div>
         
-        <div style={{ ...styles.desktopMenu, display: window.innerWidth < 838 ? 'none' : 'flex' }}>
+        <div style={{ ...styles.desktopMenu, display: window.innerWidth < 980 ? 'none' : 'flex' }}>
           {navItems.map((item, idx) => (
             <button
               key={idx}
@@ -116,7 +116,7 @@ const Navbar = () => {
         </div>
         
         <button
-          style={{ ...styles.mobileMenuButton, display: window.innerWidth < 838 ? 'block' : 'none' }}
+          style={{ ...styles.mobileMenuButton, display: window.innerWidth < 980 ? 'block' : 'none' }}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           {isMenuOpen ? '✕' : '☰'}

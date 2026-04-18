@@ -35,7 +35,7 @@ const Footer = () => {
       <div style={styles.container}>
         <div style={styles.content}>
           <div style={styles.copyright}>
-            © {currentYear} <span style={styles.heart}>❤️</span> Desenvolvido com dedicação
+            &copy; {currentYear} Desenvolvido por Júnio Rodrigo Cardoso de Sousa
           </div>
           <div style={styles.copyright}>
             Todos os direitos reservados

@@ -1,4 +1,3 @@
-import React from 'react';
 
 const skillsData = {
   frontend: [
@@ -106,11 +105,11 @@ const Skills = () => {
           <h2 style={styles.title}>Tecnologias que domino</h2>
           <div style={styles.divider}></div>
         </div>
-        
+
         <div style={styles.grid}>
-          <div className="animate-slide-left">
+          <div className="animate-expand-hover">
             <div style={styles.skillCard}>
-              <h3 style={styles.cardTitle}>🎨 Frontend</h3>
+              <h3 style={styles.cardTitle}>Frontend</h3>
               {skillsData.frontend.map((skill, idx) => (
                 <div key={idx} style={styles.skillItem}>
                   <div style={styles.skillHeader}>
@@ -118,7 +117,7 @@ const Skills = () => {
                     <span style={styles.skillPercent}>{skill.level}%</span>
                   </div>
                   <div style={styles.progressBar}>
-                    <div 
+                    <div
                       style={{
                         ...styles.progressFill,
                         width: `${skill.level}%`,
@@ -130,10 +129,10 @@ const Skills = () => {
               ))}
             </div>
           </div>
-          
-          <div className="animate-fade-in">
+
+          <div className="animate-expand-hover">
             <div style={styles.skillCard}>
-              <h3 style={styles.cardTitle}>⚙️ Backend</h3>
+              <h3 style={styles.cardTitle}>Backend</h3>
               {skillsData.backend.map((skill, idx) => (
                 <div key={idx} style={styles.skillItem}>
                   <div style={styles.skillHeader}>
@@ -141,7 +140,7 @@ const Skills = () => {
                     <span style={styles.skillPercent}>{skill.level}%</span>
                   </div>
                   <div style={styles.progressBar}>
-                    <div 
+                    <div
                       style={{
                         ...styles.progressFill,
                         width: `${skill.level}%`,
@@ -153,10 +152,10 @@ const Skills = () => {
               ))}
             </div>
           </div>
-          
-          <div className="animate-slide-right">
+
+          <div className="animate-expand-hover">
             <div style={styles.skillCard}>
-              <h3 style={styles.cardTitle}>🛠️ Ferramentas</h3>
+              <h3 style={styles.cardTitle}>Ferramentas</h3>
               {skillsData.tools.map((skill, idx) => (
                 <div key={idx} style={styles.skillItem}>
                   <div style={styles.skillHeader}>
@@ -164,7 +163,7 @@ const Skills = () => {
                     <span style={styles.skillPercent}>{skill.level}%</span>
                   </div>
                   <div style={styles.progressBar}>
-                    <div 
+                    <div
                       style={{
                         ...styles.progressFill,
                         width: `${skill.level}%`,

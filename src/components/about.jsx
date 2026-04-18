@@ -36,7 +36,6 @@ const About = () => {
     },
     content: {
       display: 'grid',
-      gridTemplateColumns: '1fr 1fr',
       gap: '48px',
       alignItems: 'center'
     },
@@ -101,7 +100,7 @@ const About = () => {
           <div style={styles.divider}></div>
         </div>
         
-        <div style={styles.content}>
+        <div style={{...styles.content, gridTemplateColumns: window.innerWidth > 640 ? '1fr 1fr' : '1fr'}}>
           <div className="animate-slide-left">
             <p style={styles.text}>
               Olá! Meu nome é <span style={styles.highlight}>Júnio Rodrigo</span> e sou desenvolvedor full stack 
@@ -125,10 +124,6 @@ const About = () => {
                 <div style={styles.statNumber}>3+</div>
                 <div style={styles.statLabel}>Anos de Prática</div>
               </div>
-              {/* <div style={styles.statCard}>
-                <div style={styles.statNumber}>15+</div>
-                <div style={styles.statLabel}>Clientes Felizes</div>
-              </div> */}
             </div>
           </div>
           

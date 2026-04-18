@@ -9,7 +9,7 @@ const Projects = () => {
     ? projectsData 
     : projectsData.filter(project => project.tech.some(t => t.toLowerCase().includes(filter.toLowerCase())));
 
-  const filters = ['all', 'React', 'Node.js', 'CSS3', 'JavaScript'];
+  const filters = ['all', 'React', 'CSS3', 'JavaScript'];
 
   const styles = {
     section: {
@@ -62,7 +62,7 @@ const Projects = () => {
     },
     projectsGrid: {
       display: 'grid',
-      gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
+      gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
       gap: '32px',
       marginTop: '48px'
     },
@@ -182,10 +182,10 @@ const Projects = () => {
                 </div>
                 <div style={styles.projectLinks}>
                   <a href={project.demoLink} target="_blank" rel="noopener noreferrer" style={styles.link}>
-                    🔗 Demo ao vivo
+                    Demo ao vivo
                   </a>
                   <a href={project.codeLink} target="_blank" rel="noopener noreferrer" style={styles.link}>
-                    💻 Código fonte
+                    Código fonte
                   </a>
                 </div>
               </div>

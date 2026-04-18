@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Github, Linkedin, Instagram, Whatsapp, Envelope, Telephone, GeoAlt } from 'react-bootstrap-icons'
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
@@ -18,8 +19,16 @@ const Contact = () => {
   };
 
   const styles = {
+    hoverEnter: {
+      color: '#8b5cf6',
+    },
     section: {
       padding: '96px 0'
+    },
+    icon: {
+      backgroundColor: 'rgba(139, 92, 246, 0.2)',
+      padding: '10px',
+      borderRadius: '10px',
     },
     container: {
       maxWidth: '1280px',
@@ -51,7 +60,7 @@ const Contact = () => {
     },
     content: {
       display: 'grid',
-      gridTemplateColumns: '1fr 1fr',
+      gridTemplateColumns: '1fr',
       gap: '48px'
     },
     infoSection: {
@@ -60,11 +69,26 @@ const Contact = () => {
       gap: '32px'
     },
     infoCard: {
+      display: 'grid',
+      gridTemplateColumns: '1fr 1fr',
       background: 'rgba(255, 255, 255, 0.05)',
       backdropFilter: 'blur(10px)',
       padding: '24px',
       borderRadius: '16px',
       border: '1px solid rgba(255, 255, 255, 0.1)'
+    },
+    socialDivisor: {
+
+      borderBottom: 'solid 1px rgba(139, 92, 246, 0.2)',
+      padding: '10px',
+    },
+    social: {
+      color: '#d1d5db',
+      margin: '0 0 0 10px',
+      textDecoration: 'none',
+      display: 'flex',
+      alignItems: 'center',
+      gap: '10px',
     },
     infoTitle: {
       fontSize: '20px',
@@ -84,17 +108,18 @@ const Contact = () => {
     infoText: {
       color: '#d1d5db'
     },
+
     socialLinks: {
       display: 'flex',
+      flexDirection: 'column',
       gap: '16px',
       marginTop: '16px'
     },
     socialLink: {
       display: 'inline-block',
-      padding: '8px 16px',
+      padding: '2px 4px',
       background: 'rgba(139, 92, 246, 0.2)',
       borderRadius: '8px',
-      color: '#8b5cf6',
       textDecoration: 'none',
       transition: 'all 0.3s ease'
     },
@@ -175,99 +200,70 @@ const Contact = () => {
           <h2 style={styles.title}>Entre em Contato</h2>
           <div style={styles.divider}></div>
         </div>
-        
+
         <div style={styles.content}>
           <div className="animate-slide-left">
             <div style={styles.infoCard}>
-              <h3 style={styles.infoTitle}>📞 Informações de Contato</h3>
-              <div style={styles.infoItem}>
-                <span style={styles.infoIcon}>📧</span>
-                <span style={styles.infoText}>seuemail@exemplo.com</span>
-              </div>
-              <div style={styles.infoItem}>
-                <span style={styles.infoIcon}>📱</span>
-                <span style={styles.infoText}>(11) 99999-9999</span>
-              </div>
-              <div style={styles.infoItem}>
-                <span style={styles.infoIcon}>📍</span>
-                <span style={styles.infoText}>São Paulo, SP - Brasil</span>
-              </div>
-            </div>
-            
-            <div style={styles.infoCard}>
-              <h3 style={styles.infoTitle}>🌐 Redes Sociais</h3>
-              <div style={styles.socialLinks}>
-                <a href="#" style={styles.socialLink} onMouseEnter={(e) => e.target.style.background = '#8b5cf6'} onMouseLeave={(e) => e.target.style.background = 'rgba(139, 92, 246, 0.2)'}>GitHub</a>
-                <a href="#" style={styles.socialLink} onMouseEnter={(e) => e.target.style.background = '#8b5cf6'} onMouseLeave={(e) => e.target.style.background = 'rgba(139, 92, 246, 0.2)'}>LinkedIn</a>
-                <a href="#" style={styles.socialLink} onMouseEnter={(e) => e.target.style.background = '#8b5cf6'} onMouseLeave={(e) => e.target.style.background = 'rgba(139, 92, 246, 0.2)'}>Instagram</a>
-              </div>
-            </div>
-          </div>
-          
-          <div className="animate-slide-right">
-            <div style={styles.formCard}>
-              {isSubmitted ? (
-                <div style={styles.successMessage}>
-                  <div style={styles.successIcon}>✅</div>
-                  <h3 style={styles.successTitle}>Mensagem enviada!</h3>
-                  <p style={{ color: '#d1d5db' }}>Entrarei em contato em breve.</p>
+              <div>
+                <h3 style={styles.infoTitle}>Informações de Contato</h3>
+                <div style={styles.infoItem}>
+                  <span style={styles.infoIcon}>< Envelope style={styles.icon} size='40px' color='#8b5cf6' /></span>
+                  <span style={styles.infoText}>juniorodrigo0210@gmail.com</span>
                 </div>
-              ) : (
-                <form onSubmit={handleSubmit} style={styles.form}>
-                  <div style={styles.inputGroup}>
-                    <label style={styles.label}>Nome completo *</label>
-                    <input
-                      type="text"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleInputChange}
-                      required
-                      style={styles.input}
-                      placeholder="Digite seu nome"
-                      onFocus={(e) => e.target.style.borderColor = '#8b5cf6'}
-                      onBlur={(e) => e.target.style.borderColor = 'rgba(139, 92, 246, 0.3)'}
-                    />
-                  </div>
-                  <div style={styles.inputGroup}>
-                    <label style={styles.label}>E-mail *</label>
-                    <input
-                      type="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      required
-                      style={styles.input}
-                      placeholder="seuemail@exemplo.com"
-                      onFocus={(e) => e.target.style.borderColor = '#8b5cf6'}
-                      onBlur={(e) => e.target.style.borderColor = 'rgba(139, 92, 246, 0.3)'}
-                    />
-                  </div>
-                  <div style={styles.inputGroup}>
-                    <label style={styles.label}>Mensagem *</label>
-                    <textarea
-                      name="message"
-                      value={formData.message}
-                      onChange={handleInputChange}
-                      required
-                      rows={5}
-                      style={styles.textarea}
-                      placeholder="Digite sua mensagem..."
-                      onFocus={(e) => e.target.style.borderColor = '#8b5cf6'}
-                      onBlur={(e) => e.target.style.borderColor = 'rgba(139, 92, 246, 0.3)'}
-                    />
-                  </div>
-                  <button
-                    type="submit"
-                    style={styles.submitButton}
-                    onMouseEnter={(e) => e.target.style.transform = 'translateY(-2px)'}
-                    onMouseLeave={(e) => e.target.style.transform = 'translateY(0)'}
-                  >
-                    Enviar Mensagem
-                  </button>
-                </form>
-              )}
+                <div style={styles.infoItem}>
+                  <span style={styles.infoIcon}>< Telephone style={styles.icon} size='40px' color='#8b5cf6' /></span>
+                  <span style={styles.infoText}>(18) 99817-6206</span>
+                </div>
+                <div style={styles.infoItem}>
+                  <span style={styles.infoIcon}><GeoAlt style={styles.icon} size='40px' color='#8b5cf6' /></span>
+                  <span style={styles.infoText}>Araçatuba, SP - Brasil</span>
+                </div>
+              </div>
+
+              <div style={styles.socialLinks}>
+                <div style={styles.socialDivisor}>
+                  <a
+                    style={styles.social} href="https://github.com/Junio-Rodr1go" target='_blank' >
+                    <Github size='40px' color='#8b5cf6' style={styles.socialLink} />
+                    <div
+                      onMouseEnter={e => e.target.style.color = '#8b5cf6'}
+                      onMouseLeave={e => e.target.style.color = '#d1d5db'}
+                    >GitHub</div>
+                  </a>
+                </div>
+                <div style={styles.socialDivisor}>
+                  <a
+                    style={styles.social} href="https://www.linkedin.com/in/junio-rodrigo-42542937a/" target='_blank'>
+                    <Linkedin size='40px' color='#8b5cf6' style={styles.socialLink} />
+                    <div
+                      onMouseEnter={e => e.target.style.color = '#8b5cf6'}
+                      onMouseLeave={e => e.target.style.color = '#d1d5db'}
+                    >LinkeDin</div>
+                  </a>
+                </div>
+                <div style={styles.socialDivisor}>
+                  <a style={styles.social} href="https://www.instagram.com/okktuti/" target='_blank'>
+                    <Instagram size='40px' color='#8b5cf6' style={styles.socialLink} />
+                    <div
+                      onMouseEnter={e => e.target.style.color = '#8b5cf6'}
+                      onMouseLeave={e => e.target.style.color = '#d1d5db'}>
+                      Instagram</div>
+                  </a>
+                </div>
+                <div style={styles.socialDivisor}>
+                  <a style={styles.social} href="https://wa.me/18998176206" target='_blank'>
+                    <Whatsapp size='40px' color='#8b5cf6' style={styles.socialLink} />
+                    <div
+                      onMouseEnter={e => e.target.style.color = '#8b5cf6'}
+                      onMouseLeave={e => e.target.style.color = '#d1d5db'}>
+                      WhatsApp</div>
+                  </a>
+                </div>
+              </div>
+
             </div>
           </div>
+
         </div>
       </div>
     </section>
