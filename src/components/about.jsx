@@ -99,22 +99,31 @@ const About = () => {
           <h2 style={styles.title}>Quem sou eu?</h2>
           <div style={styles.divider}></div>
         </div>
-        
-        <div style={{...styles.content, gridTemplateColumns: window.innerWidth > 640 ? '1fr 1fr' : '1fr'}}>
+
+        <div style={{ ...styles.content, gridTemplateColumns: window.innerWidth > 640 ? '1fr 1fr' : '1fr' }}>
           <div className="animate-slide-left">
             <p style={styles.text}>
-              Olá! Meu nome é <span style={styles.highlight}>Júnio Rodrigo</span> e sou desenvolvedor full stack 
-              com mais de <span style={styles.highlight}>3 anos na área</span> criando aplicações web modernas e escaláveis.
+              Olá! Meu nome é <span style={styles.highlight}>Júnio Rodrigo</span>, desenvolvedor
+              full stack apaixonado por criar experiências web modernas, performáticas e escaláveis.
             </p>
+
             <p style={styles.text}>
-              Minha jornada na programação começou com a curiosidade de entender como os sites funcionavam. 
-              Hoje, tenho orgulho de transformar ideias em soluções reais que impactam a vida das pessoas.
+              Minha jornada começou pela curiosidade de entender como os sites funcionavam, e desde
+              então não parei mais. Hoje estudo <span style={styles.highlight}>Desenvolvimento de Sistemas</span> na{' '}
+              <span style={styles.highlight}>ETEC de Araçatuba</span>.
             </p>
+
             <p style={styles.text}>
-              Trabalho com <span style={styles.highlight}>React, Node.js e MongoDB</span>, 
-              busco sempre entregar código limpo, performático e com as melhores práticas do mercado.
+              Trabalho com <span style={styles.highlight}>React, Node.js e MongoDB</span>, sempre
+              focado em código limpo, boas práticas e soluções que realmente fazem diferença.
             </p>
-            
+
+            <p style={styles.text}>
+              Também me comunico em <span style={styles.highlight}>Inglês e Espanhol (B2)</span>,
+              o que me permite colaborar em projetos e consumir conteúdo técnico diretamente na fonte.
+            </p>
+
+
             <div style={styles.stats}>
               <div style={styles.statCard}>
                 <div style={styles.statNumber}>5+</div>
@@ -126,12 +135,12 @@ const About = () => {
               </div>
             </div>
           </div>
-          
+
           <div className="animate-slide-right">
             <div style={styles.imageContainer}>
               <div style={styles.image}>
-                <img 
-                  src="https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=500&h=500&fit=crop" 
+                <img
+                  src="https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=500&h=500&fit=crop"
                   alt="Coding"
                   style={styles.img}
                 />
