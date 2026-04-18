@@ -119,7 +119,7 @@ const About = () => {
             </p>
 
             <p style={styles.text}>
-              Também me comunico em <span style={styles.highlight}>Inglês e Espanhol (B2)</span>,
+              Também me comunico em <span style={styles.highlight}>Inglês e Espanhol (B2 - nível intermediario)</span>,
               o que me permite colaborar em projetos e consumir conteúdo técnico diretamente na fonte.
             </p>
 
