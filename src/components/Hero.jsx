@@ -1,4 +1,4 @@
-import image from"../imgs/Junio-Profile.jpeg" 
+import image from "../imgs/Junio-profile.jpeg" 
 import React from 'react';
 
 const Hero = () => {
