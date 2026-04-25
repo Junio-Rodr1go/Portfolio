@@ -19,7 +19,6 @@ const Hero = () => {
     },
     container: {
       maxWidth: '900px',
-      transform: 'scale(1.2)',
     },
     badge: {
       display: 'inline-block',
