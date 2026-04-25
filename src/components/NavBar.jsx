@@ -84,8 +84,8 @@ const Navbar = () => {
     }
   };
 
-  const navItems = ['Início', 'Sobre', 'Habilidades', 'Projetos'];
-  const sectionIds = ['inicio', 'sobre', 'habilidades', 'projetos'];
+  const navItems = ['Início', 'Sobre', 'Projetos'];
+  const sectionIds = ['inicio', 'sobre', 'projetos'];
 
   return (
     <nav style={styles.navbar}>
