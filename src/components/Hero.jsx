@@ -1,4 +1,3 @@
-import image from "../imgs/Junio-profile.jpeg" 
 import React from 'react';
 
 const Hero = () => {
@@ -13,20 +12,14 @@ const Hero = () => {
     hero: {
       minHeight: '100vh',
       display: 'flex',
+      justifyContent: 'center',
       alignItems: 'center',
       position: 'relative',
       paddingTop: '80px'
     },
     container: {
-      maxWidth: '1280px',
-      margin: '0 auto',
-      padding: '0 24px',
-      width: '100%'
-    },
-    content: {
-      display: 'grid',
-      gap: '48px',
-      alignItems: 'center'
+      maxWidth: '900px',
+      transform: 'scale(1.2)',
     },
     badge: {
       display: 'inline-block',
@@ -128,7 +121,7 @@ const Hero = () => {
             </div>
           </div>
           
-          <div className="animate-slide-right">
+          {/* <div className="animate-slide-right">
             <div style={styles.imageContainer}>
               <div style={styles.image}>
                 <div style={styles.imageInner}>
@@ -143,7 +136,7 @@ const Hero = () => {
                 💻 5+ Projetos
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

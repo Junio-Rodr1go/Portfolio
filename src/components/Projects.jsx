@@ -5,8 +5,8 @@ const Projects = () => {
   const [filter, setFilter] = useState('all');
   const [hoveredProject, setHoveredProject] = useState(null);
 
-  const filteredProjects = filter === 'all' 
-    ? projectsData 
+  const filteredProjects = filter === 'all'
+    ? projectsData
     : projectsData.filter(project => project.tech.some(t => t.toLowerCase().includes(filter.toLowerCase())));
 
   const filters = ['all', 'React', 'CSS3', 'JavaScript'];
@@ -72,10 +72,10 @@ const Projects = () => {
       borderRadius: '20px',
       overflow: 'hidden',
       transition: 'all 0.3s ease',
-      cursor: 'pointer',
       border: '1px solid rgba(255, 255, 255, 0.1)'
     },
     projectImage: {
+      cursor: 'pointer',
       width: '100%',
       height: '240px',
       objectFit: 'cover',
@@ -114,7 +114,10 @@ const Projects = () => {
       borderTop: '1px solid rgba(255, 255, 255, 0.1)'
     },
     link: {
-      color: '#8b5cf6',
+      background: '#8a5cf64f',
+      padding: '8px',
+      borderRadius: '16px',
+      color: '#fff',
       textDecoration: 'none',
       fontSize: '14px',
       transition: 'color 0.3s ease'
@@ -129,7 +132,7 @@ const Projects = () => {
           <h2 style={styles.title}>Projetos em Destaque</h2>
           <div style={styles.divider}></div>
         </div>
-        
+
         <div style={styles.filterContainer}>
           {filters.map((f, idx) => (
             <button
@@ -151,7 +154,7 @@ const Projects = () => {
             </button>
           ))}
         </div>
-        
+
         <div style={styles.projectsGrid}>
           {filteredProjects.map((project, idx) => (
             <div
@@ -164,8 +167,9 @@ const Projects = () => {
               onMouseEnter={() => setHoveredProject(project.id)}
               onMouseLeave={() => setHoveredProject(null)}
             >
-              <img 
-                src={project.image} 
+              <img
+                onClick={() => window.open(project.demoLink, '_blank')}
+                src={project.image}
                 alt={project.title}
                 style={{
                   ...styles.projectImage,
