@@ -70,7 +70,7 @@ const Contact = () => {
     },
     infoCard: {
       display: 'grid',
-      gridTemplateColumns: '1fr 1fr',
+      gridTemplateColumns: window.innerWidth < 666 ? '1fr' : '1fr 1fr',
       background: 'rgba(255, 255, 255, 0.05)',
       backdropFilter: 'blur(10px)',
       padding: '24px',
@@ -78,9 +78,7 @@ const Contact = () => {
       border: '1px solid rgba(255, 255, 255, 0.1)'
     },
     socialDivisor: {
-
       borderBottom: 'solid 1px rgba(139, 92, 246, 0.2)',
-      padding: '10px',
     },
     social: {
       color: '#d1d5db',
@@ -88,7 +86,8 @@ const Contact = () => {
       textDecoration: 'none',
       display: 'flex',
       alignItems: 'center',
-      gap: '10px',
+      margin: '10px',
+      gap: '12px',
     },
     infoTitle: {
       fontSize: '20px',
@@ -250,7 +249,7 @@ const Contact = () => {
                       Instagram</div>
                   </a>
                 </div>
-                <div style={styles.socialDivisor}>
+                <div>
                   <a style={styles.social} href="https://wa.me/18998176206" target='_blank'>
                     <Whatsapp size='40px' color='#8b5cf6' style={styles.socialLink} />
                     <div
