@@ -52,7 +52,7 @@ const Navbar = () => {
     },
     desktopMenu: {
       display: 'flex',
-      gap: '70px',
+      gap: '110px',
       alignItems: 'center',
       justifyContent: 'center'
     },
