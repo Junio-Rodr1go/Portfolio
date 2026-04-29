@@ -14,7 +14,7 @@ export const projectsData = [
     title: "Salão de beleza",
     description: "Landing page de um salão de beleza moderno com animações suaves.",
     tech: ["React", "CSS3", "Vite"],
-    image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     demoLink: "https://danicabelos.vercel.app/",
     codeLink: "https://github.com/Junio-Rodr1go/Studio-hair",
     featured: true
