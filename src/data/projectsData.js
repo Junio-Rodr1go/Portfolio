@@ -9,16 +9,16 @@ export const projectsData = [
     codeLink: "https://github.com/Junio-Rodr1go/Academia-landingPage",
     featured: true
   },
-  // {
-  //   id: 2,
-  //   title: "E-commerce Fashion",
-  //   description: "Loja virtual completa com carrinho de compras e sistema de pagamento integrado.",
-  //   tech: ["React", "Node.js", "MongoDB"],
-  //   image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&h=400&fit=crop",
-  //   demoLink: "https://github.com/seu-usuario/ecommerce",
-  //   codeLink: "https://github.com/seu-usuario/ecommerce",
-  //   featured: true
-  // },
+  {
+    id: 2,
+    title: "Salão de beleza",
+    description: "Landing page de um salão de beleza moderno com animações suaves.",
+    tech: ["React", "CSS3", "Vite"],
+    image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&h=400&fit=crop",
+    demoLink: "https://danicabelos.vercel.app/",
+    codeLink: "https://github.com/Junio-Rodr1go/Studio-hair",
+    featured: true
+  },
   {
     id: 3,
     title: "Cafeteria",
