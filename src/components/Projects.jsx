@@ -1,15 +1,46 @@
 import React, { useState } from 'react';
 import { projectsData } from '../data/projectsData';
+import { useLanguage } from '../context/language.jsx';
 
 const Projects = () => {
   const [filter, setFilter] = useState('all');
   const [hoveredProject, setHoveredProject] = useState(null);
+  const { language } = useLanguage();
 
   const filteredProjects = filter === 'all'
     ? projectsData
     : projectsData.filter(project => project.tech.some(t => t.toLowerCase().includes(filter.toLowerCase())));
 
   const filters = ['all', 'React', 'CSS3', 'JavaScript'];
+
+  const t = {
+    badge:
+      language === 'English' ? 'My Work' :
+      language === 'Español' ? 'Mis Trabajos' :
+      'Meus Trabalhos',
+    title:
+      language === 'English' ? 'Featured Projects' :
+      language === 'Español' ? 'Proyectos Destacados' :
+      'Projetos em Destaque',
+    all:
+      language === 'English' ? 'All' :
+      language === 'Español' ? 'Todos' :
+      'Todos',
+    demo:
+      language === 'English' ? 'Live Demo' :
+      language === 'Español' ? 'Demo en vivo' :
+      'Demo ao vivo',
+    code:
+      language === 'English' ? 'Source Code' :
+      language === 'Español' ? 'Código fuente' :
+      'Código fonte',
+  };
+
+  const getDescription = (project) => {
+    if (language === 'English') return project.description_en;
+    if (language === 'Español') return project.description_es;
+    return project.description;
+  };
 
   const styles = {
     section: {
@@ -128,8 +159,8 @@ const Projects = () => {
     <section id="projetos" style={styles.section}>
       <div style={styles.container}>
         <div style={styles.header} className="animate-fade-in">
-          <span style={styles.badge}>Meus Trabalhos</span>
-          <h2 style={styles.title}>Projetos em Destaque</h2>
+          <span style={styles.badge}>{t.badge}</span>
+          <h2 style={styles.title}>{t.title}</h2>
           <div style={styles.divider}></div>
         </div>
 
@@ -150,13 +181,13 @@ const Projects = () => {
                 if (filter !== f) e.target.style.borderColor = 'rgba(139, 92, 246, 0.5)';
               }}
             >
-              {f === 'all' ? 'Todos' : f}
+              {f === 'all' ? t.all : f}
             </button>
           ))}
         </div>
 
         <div style={styles.projectsGrid}>
-          {filteredProjects.map((project, idx) => (
+          {filteredProjects.map((project) => (
             <div
               key={project.id}
               className="animate-fade-in"
@@ -178,7 +209,7 @@ const Projects = () => {
               />
               <div style={styles.projectContent}>
                 <h3 style={styles.projectTitle}>{project.title}</h3>
-                <p style={styles.projectDescription}>{project.description}</p>
+                <p style={styles.projectDescription}>{getDescription(project)}</p>
                 <div style={styles.techTags}>
                   {project.tech.map((tech, i) => (
                     <span key={i} style={styles.techTag}>{tech}</span>
@@ -186,10 +217,10 @@ const Projects = () => {
                 </div>
                 <div style={styles.projectLinks}>
                   <a href={project.demoLink} target="_blank" rel="noopener noreferrer" style={styles.link}>
-                    Demo ao vivo
+                    {t.demo}
                   </a>
                   <a href={project.codeLink} target="_blank" rel="noopener noreferrer" style={styles.link}>
-                    Código fonte
+                    {t.code}
                   </a>
                 </div>
               </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { useLanguage } from '../context/language.jsx'
 
 const Hero = () => {
   const scrollToSection = (id) => {
@@ -97,47 +98,30 @@ const Hero = () => {
       fontSize: '14px'
     }
   };
+  const { language } = useLanguage();
 
   return (
     <section id="inicio" style={styles.hero}>
       <div style={styles.container}>
-          <div style={{...styles.content, gridTemplateColumns: window.innerWidth > 640 ? '1fr 1fr' : '1fr'}}>
+        <div style={{ ...styles.content, gridTemplateColumns: window.innerWidth > 640 ? '1fr 1fr' : '1fr' }}>
           <div className="animate-slide-left">
-            <span style={styles.badge}
-            >👋 Olá, eu sou Júnio Rodrigo</span>
+            <span style={styles.badge}>
+              {language === 'Português' ? '👋 Olá, eu sou Júnio Rodrigo' : language === 'English' ? '👋 Hello, I am Júnio Rodrigo' : '👋 Hola, Soy Júnio Rodrigo'}</span>
             <h1 style={styles.title}>
-              Desenvolvedor <span style={styles.gradientText}>Full Stack</span>
+              {language === 'Português' ? (<>Desenvolvedor <span style={styles.gradientText}>Full Stack</span></>) : language === 'English' ? (<>Developer <span style={styles.gradientText}>Full Stack</span></>) : (<>Desarrollador <span style={styles.gradientText}>Full Stack</span></>)}
             </h1>
             <p style={styles.description}>
-              Crio soluções digitais incríveis com React, Node.js e tecnologias modernas. 
-              Apaixonado por transformar ideias em código funcional e elegante.
+              {language === 'Português' ? 'Crio soluções digitais incríveis com React, Node.js e tecnologias modernas. Apaixonado por transformar ideias em código funcional e elegante.' : language === 'English' ? 'I create amazing digital solutions with React, Node.js, and modern technologies. Passionate about turning ideas into functional and elegant code.' : 'Creo soluciones digitales increíbles con React, Node.js y tecnologías modernas. Soy apasionado por transformar ideas en código funcional y elegante.'}
             </p>
             <div style={styles.buttons}>
               <button className="btn-primary" onClick={() => scrollToSection('projetos')}>
-                Ver Projetos
+                {language === 'Português' ? 'Ver Projetos' : language === 'English' ? 'Check out Projects' : 'Ver Proyectos'}
               </button>
               <button className="btn-secondary" onClick={() => scrollToSection('contato')}>
-                Entrar em Contato
+                {language === 'Português' ? 'Entrar em Contato' : language === 'English' ? 'Get in touch' : 'Ponerse en contacto'}
               </button>
             </div>
           </div>
-          
-          {/* <div className="animate-slide-right">
-            <div style={styles.imageContainer}>
-              <div style={styles.image}>
-                <div style={styles.imageInner}>
-                  <img 
-                    src={image}
-                    alt="Developer"
-                    style={styles.img}
-                  />
-                </div>
-              </div>
-              <div style={styles.floatingBadge} className="animate-float">
-                💻 5+ Projetos
-              </div>
-            </div>
-          </div> */}
         </div>
       </div>
     </section>

@@ -1,7 +1,20 @@
 import React from 'react';
+import { useLanguage } from '../context/language.jsx';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const { language } = useLanguage();
+
+  const t = {
+    developed:
+      language === 'English' ? 'Developed by' :
+      language === 'Español' ? 'Desarrollado por' :
+      'Desenvolvido por',
+    rights:
+      language === 'English' ? 'All rights reserved' :
+      language === 'Español' ? 'Todos los derechos reservados' :
+      'Todos os direitos reservados',
+  };
 
   const styles = {
     footer: {
@@ -35,10 +48,10 @@ const Footer = () => {
       <div style={styles.container}>
         <div style={styles.content}>
           <div style={styles.copyright}>
-            &copy; {currentYear} Desenvolvido por Júnio Rodrigo Cardoso de Sousa
+            &copy; {currentYear} {t.developed} Júnio Rodrigo Cardoso de Sousa
           </div>
           <div style={styles.copyright}>
-            Todos os direitos reservados
+            {t.rights}
           </div>
         </div>
       </div>

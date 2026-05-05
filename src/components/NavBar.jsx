@@ -1,8 +1,38 @@
 import React, { useState, useEffect } from 'react';
+import { useLanguage } from '../context/language.jsx';
+
+const flags = {
+  'Português': (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 504" width="22" height="15">
+      <rect width="720" height="504" fill="#009C3B" />
+      <polygon points="360,36 684,252 360,468 36,252" fill="#FFDF00" />
+      <circle cx="360" cy="252" r="144" fill="#002776" />
+      <path d="M216,252 Q360,180 504,252" stroke="white" strokeWidth="28" fill="none" />
+    </svg>
+  ),
+  'English': (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="22" height="15">
+      <rect width="60" height="30" fill="#012169" />
+      <path d="M0,0 L60,30 M60,0 L0,30" stroke="white" strokeWidth="6" />
+      <path d="M0,0 L60,30 M60,0 L0,30" stroke="#C8102E" strokeWidth="4" />
+      <path d="M30,0 V30 M0,15 H60" stroke="white" strokeWidth="10" />
+      <path d="M30,0 V30 M0,15 H60" stroke="#C8102E" strokeWidth="6" />
+    </svg>
+  ),
+  'Español': (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2" width="22" height="15">
+      <rect width="3" height="2" fill="#c60b1e" />
+      <rect y="0.5" width="3" height="1" fill="#ffc400" />
+    </svg>
+  ),
+};
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isSelected, setIsSelected] = useState(false);
+  const isMobile = window.innerWidth < 1120;
+  const { language, setLanguage } = useLanguage('Português');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -40,6 +70,39 @@ const Navbar = () => {
       justifyContent: 'center',
       alignItems: 'center'
     },
+    select: {
+      display: isMobile ? 'flex' : 'block',
+      flexDirection: 'column',
+      transition: 'all 0.3s ease',
+      fontSize: '15px',
+      position: 'absolute',
+      right: isMobile ? '60px' : '100px',
+      top: isMobile ? '14px' : '20px',
+      background: isScrolled ? 'rgba(15, 12, 41, 0.95)' : 'transparent',
+      color: 'white',
+      border: '1px solid rgba(139, 92, 246, 0.3)',
+      borderRadius: '8px',
+      padding: '4px 8px',
+      cursor: 'pointer',
+      outline: 'none',
+      width: isMobile ? 'auto' : '140px',
+      alignItems: isMobile && 'center',
+      gap: '10px'
+    },
+    selected: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: '8px',
+      padding: '4px 8px',
+      cursor: 'pointer',
+      transition: 'background 0.3s ease'
+    },
+    option: {
+      padding: '5px',
+      cursor: 'pointer',
+      transition: 'background 0.3s ease',
+      borderRadius: '10px'
+    },
     logo: {
       position: 'absolute',
       alignSelf: 'start',
@@ -62,7 +125,7 @@ const Navbar = () => {
       color: '#d1d5db',
       fontSize: '1rem',
       fontWeight: 500,
-      cursor: 'pointer',  
+      cursor: 'pointer',
       transition: 'color 0.3s ease'
     },
     mobileMenuButton: {
@@ -84,8 +147,46 @@ const Navbar = () => {
     }
   };
 
-  const navItems = ['Início', 'Sobre', 'Projetos'];
+  const navItems = {
+    'Português': ['Início', 'Sobre', 'Projetos'],
+    'English': ['Home', 'About', 'Projects'],
+    'Español': ['Inicio', 'Acerca de', 'Proyectos']
+  };
   const sectionIds = ['inicio', 'sobre', 'projetos'];
+
+  const LangSelector = () => (
+    <div style={styles.select}>
+      <div onClick={() => setIsSelected(!isSelected)} style={styles.selected}>
+        {flags[language]} {!isMobile && language}
+      </div>
+      {isSelected && (
+        <div>
+          <div style={styles.option}
+            onClick={() => { setLanguage('English'); setIsSelected(false); }}
+            onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(139, 92, 246, 0.2)'}
+            onMouseLeave={(e) => e.currentTarget.style.background = 'transparent'}
+          >
+            {flags['English']} {!isMobile && 'English'}
+          </div>
+          <div style={styles.option}
+            onClick={() => { setLanguage('Español'); setIsSelected(false); }}
+            onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(139, 92, 246, 0.2)'}
+            onMouseLeave={(e) => e.currentTarget.style.background = 'transparent'}
+          >
+            {flags['Español']} {!isMobile && 'Español'}
+          </div>
+          <div style={styles.option}
+            onClick={() => { setLanguage('Português'); setIsSelected(false); }}
+            onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(139, 92, 246, 0.2)'}
+            onMouseLeave={(e) => e.currentTarget.style.background = 'transparent'}
+          >
+            {flags['Português']} {!isMobile && 'Português'}
+          </div>
+        </div>
+
+      )}
+    </div>
+  );
 
   return (
     <nav style={styles.navbar}>
@@ -93,9 +194,9 @@ const Navbar = () => {
         <div style={styles.logo} onClick={() => scrollToSection('inicio')}>
           {"<Júnio />"}
         </div>
-        
-        <div style={{ ...styles.desktopMenu, display: window.innerWidth < 980 ? 'none' : 'flex' }}>
-          {navItems.map((item, idx) => (
+
+        <div style={{ ...styles.desktopMenu, display: isMobile ? 'none' : 'flex' }}>
+          {navItems[language].map((item, idx) => (
             <button
               key={idx}
               style={styles.navLink}
@@ -111,23 +212,25 @@ const Navbar = () => {
             style={{ padding: '10px 24px' }}
             onClick={() => scrollToSection('contato')}
           >
-            Contato
+            { language === 'Português' ? 'Contato' : language === 'English' ? 'Contact' : 'Contacto'}
           </button>
         </div>
-        
+
+        <LangSelector />
+
         <button
-          style={{ ...styles.mobileMenuButton, display: window.innerWidth < 980 ? 'block' : 'none' }}
+          style={{ ...styles.mobileMenuButton, display: isMobile ? 'block' : 'none' }}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           {isMenuOpen ? '✕' : '☰'}
         </button>
       </div>
-      
+
       {isMenuOpen && (
         <div style={styles.mobileMenu}>
-          {navItems.map((item, idx) => (
+          {navItems[language].map((item, idx) => (
             <button
-              key={idx} 
+              key={idx}
               style={{ ...styles.navLink, textAlign: 'left', padding: '12px 0' }}
               onClick={() => scrollToSection(sectionIds[idx])}
             >
