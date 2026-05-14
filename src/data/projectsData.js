@@ -87,7 +87,7 @@ export const projectsData = [
     description_es: "Tienda virtual completa con diseño moderno.",
     tech: ["React", "CSS3", "Vite"],
     image: vendavelImg,
-    demoLink: "https://vendavel.vercel.com/",
+    demoLink: "https://vendavel.vercel.app/",
     codeLink: "https://github.com/Junio-Rodr1go/Store",
     featured: false
   }
