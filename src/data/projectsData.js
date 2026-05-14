@@ -4,6 +4,7 @@ import coffeeImg from './imgs/coffee.png'
 import pokedexImg from './imgs/pokedex.png'
 import flappyImg from './imgs/flappy.png'
 import calculadorImg from './imgs/calculador.png'
+import vendavelImg from './imgs/vendavel.png'
 
 export const projectsData = [
   {
@@ -76,6 +77,18 @@ export const projectsData = [
     image: calculadorImg,
     demoLink: "https://calculadora-drab-phi.vercel.app/",
     codeLink: "https://github.com/Junio-Rodr1go/Calculator",
+    featured: false
+  },
+  {
+    id: 7,
+    title: "Loja Vendável",
+    description: "Loja virtual completa com design moderno.",
+    description_en: "Complete online store with modern design.",
+    description_es: "Tienda virtual completa con diseño moderno.",
+    tech: ["React", "CSS3", "Vite"],
+    image: vendavelImg,
+    demoLink: "https://vendavel.vercel.com/",
+    codeLink: "https://github.com/Junio-Rodr1go/Store",
     featured: false
   }
 ];
